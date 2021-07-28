@@ -1,8 +1,10 @@
+using System;
+
 namespace Balta.ContentContext
 {
-        public class Article : Content
-        {
+    public class Article : Content
+    {
 
-        }
+    }
 
 }
