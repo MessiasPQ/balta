@@ -7,6 +7,7 @@ namespace Balta
         static void Main(string[] args)
         {
             Console.WriteLine("Vai Corinthians!");
+            var career = new Career();
         }
     }
 }
