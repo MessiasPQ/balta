@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Balta.ContentContext;
+using Balta.NotificationContext;
 
 namespace Balta
 {
@@ -31,8 +32,8 @@ namespace Balta
 
             var careers = new List<Career>();
             var careerPOO = new Career("Especialista POO", "Especialista-POO");
-            var careerItem = new CareerItem(1, "Começando por aqui.", "..", null);
-            var careerItem2 = new CareerItem(2, "Terminando por aqui", "..", null);
+            var careerItem = new CareerItem(1, "Começando por aqui.", "aqui", coursePOO);
+            var careerItem2 = new CareerItem(2, "Terminando por aqui", "null", courseAspNet);
             careerPOO.Items.Add(careerItem2);
             careerPOO.Items.Add(careerItem);
             careers.Add(careerPOO);
@@ -43,6 +44,13 @@ namespace Balta
                 foreach (var item in career.Items.OrderBy(x => x.Order))
                 {
                     System.Console.WriteLine($"{item.Order} - {item.Title}");
+                    System.Console.WriteLine(item.Course?.Title);
+                    System.Console.WriteLine(item.Course?.Level);
+
+                    foreach (var notification in item.Notifications)
+                    {
+                        Console.WriteLine($"{notification.Property} - {notification.Message}");
+                    }
                 }
             }
         }

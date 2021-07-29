@@ -1,17 +1,18 @@
 using System;
+using System.Collections.Generic;
+using Balta.NotificationContext;
+using Balta.SharedContext;
 
 namespace Balta.ContentContext
 {
-    public abstract class Content
+    public abstract class Content : Base
     {
         public Content(string title, string url)
         {
-            Id = Guid.NewGuid();
             Title = title;
             Url = url;
         }
 
-        public Guid Id { get; set; }
         public String Title { get; set; }
         public String Url { get; set; }
     }

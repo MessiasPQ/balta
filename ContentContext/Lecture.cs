@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Balta.ContentContext.Enums;
+using Balta.SharedContext;
 
 namespace Balta.ContentContext
 {
-    public class Lecture
+    public class Lecture : Base
     {
         public int Ordem { get; set; }
         public string Title { get; set; }
